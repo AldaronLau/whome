@@ -21,7 +21,7 @@ whome --help
 ## Links
 * [Website](https://free.plopgrizzly.com/whome)
 * [Cargo](https://crates.io/crates/whome)
-* [Documentation](https://docs.rs/whome)
+* [Documentation](https://free.plopgrizzly.com/whome)
 * [Change Log](https://free.plopgrizzly.com/whome/changelog)
 * [Contributing](https://plopgrizzly.com/contributing)
 * [Code of Conduct](https://free.plopgrizzly.com/whome/codeofconduct)
