@@ -1,0 +1,22 @@
+# Copyright © Jeron Lau 2017 - 2019.
+# Dual-licensed under either the MIT License or the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or copy at https://www.boost.org/LICENSE_1_0.txt)
+
+[package]
+name = "whome"
+version = "0.1.0"
+authors = ["Jeron Aldaron Lau <jeronaldaron@gmail.com>"]
+edition = "2018"
+
+license = "MIT / BSL-1.0"
+readme = "README.md"
+description = "A command line program for detecting the current user's name and environment.  A rust replacement for `whoami` and `hostname` with added features."
+documentation = "https://docs.rs/whoami"
+homepage = "https://free.plopgrizzly.com/whoami"
+repository = "https://github.com/plopgrizzly/whoami"
+keywords = ["user", "username", "whoami", "platform", "detect"]
+categories = ["os", "command-line-utilities"]
+
+[dependencies]
+term = "0.5"
+whoami = "0.4"
