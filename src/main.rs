@@ -84,6 +84,11 @@ fn help() {
     writeln!(t, "Print the operating system name and version.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
+    write!(t, "        platform        ").unwrap();
+    t.reset().unwrap();
+    writeln!(t, "Print the host platform.").unwrap();
+
+    t.fg(term::color::BRIGHT_CYAN).unwrap();
     write!(t, "        print           ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print everything known by whome.").unwrap();
@@ -110,17 +115,20 @@ fn main() {
                     print!(
                         "user:         {}\nusername:     {}\n\
                          host:         {}\nhostname:     {}\n\
-                         os:           {}\nenv:          {}\n",
+                         os:           {}\nenv:          {}\n\
+                         platform:     {}\n",
                         whoami::user(),
                         whoami::username(),
                         whoami::host(),
                         whoami::hostname(),
                         whoami::os(),
                         whoami::env(),
+                        whoami::platform(),
                     );
                 }
                 "env" | "--env" => println!("{}", whoami::env()),
                 "os" | "--os" => println!("{}", whoami::os()),
+                "platform" | "--platform" => println!("{}", whoami::platform()),
                 a => {
                     print!("Unknown Argument: {}\n\n", a);
                     help();
