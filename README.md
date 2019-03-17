@@ -19,13 +19,8 @@ whome --help
 ```
 
 ## Links
-* [Website](https://free.plopgrizzly.com/whome)
+* [Website](https://jeronaldaron.plopgrizzly.com/whome)
 * [Cargo](https://crates.io/crates/whome)
-* [Documentation](https://free.plopgrizzly.com/whome)
-* [Change Log](https://free.plopgrizzly.com/whome/changelog)
-* [Contributing](https://plopgrizzly.com/contributing)
-* [Code of Conduct](https://free.plopgrizzly.com/whome/codeofconduct)
-
----
-
-[![Plop Grizzly](https://plopgrizzly.com/images/logo-bar.png)](https://plopgrizzly.com)
+* [Change Log](https://jeronaldaron.plopgrizzly.com/whome/changelog)
+* [Contributors](https://jeronaldaron.plopgrizzly.com/whome/contributors)
+* [Code of Conduct](https://jeronaldaron.plopgrizzly.com/whome/codeofconduct)
