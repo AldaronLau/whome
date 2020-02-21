@@ -21,7 +21,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "whome"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "term 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "whoami 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
