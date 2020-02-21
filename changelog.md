@@ -1,3 +1,6 @@
+## 0.2.1
+* Update to `whoami` version `0.8`.
+
 ## 0.2
 * Update to `whoami` version `0.5`.
 * Add `--platform`.
