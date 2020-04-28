@@ -17,5 +17,5 @@ keywords = ["user", "username", "whoami", "platform", "detect"]
 categories = ["os", "command-line-utilities"]
 
 [dependencies]
-term = "0.5"
+term = "0.6"
 whoami = "0.8"
