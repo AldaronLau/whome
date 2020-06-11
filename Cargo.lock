@@ -132,7 +132,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "whoami"
-version = "0.8.1"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -140,7 +140,7 @@ name = "whome"
 version = "0.2.1"
 dependencies = [
  "term 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "whoami 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "whoami 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -181,7 +181,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum rust-argon2 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "2bc8af4bda8e1ff4932523b94d3dd20ee30a87232323eda55903ffd71d2fb017"
 "checksum term 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c0863a3345e70f61d613eab32ee046ccd1bcc5f9105fe402c61fcd0c13eeb8b5"
 "checksum wasi 0.9.0+wasi-snapshot-preview1 (registry+https://github.com/rust-lang/crates.io-index)" = "cccddf32554fecc6acb585f82a32a72e28b48f8c4c1883ddfeeeaa96f7d8e519"
-"checksum whoami 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "a08eb844b158ea881e81b94556eede7f7e306e4c7b976aad88f49e6e36dec391"
+"checksum whoami 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)" = "18bb55566f6f3f8440914233cf63df1eb60b801b5007d376cc46212cb8a9287c"
 "checksum winapi 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)" = "92c1eb33641e276cfa214a0522acad57be5c56b10cb348b3c5117db75f3ac4b0"
 "checksum winapi-i686-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
 "checksum winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
