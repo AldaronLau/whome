@@ -1,3 +1,6 @@
+## 0.3.0
+* Update to `whoami` version `0.9`.
+
 ## 0.2.1
 * Update to `whoami` version `0.8`.
 
