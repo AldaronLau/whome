@@ -1,4 +1,4 @@
-// Copyright © Jeron Lau 2017 - 2019.
+// Copyright © Jeron Lau 2017 - 2020.
 // Dual-licensed under either the MIT License or the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE_1_0.txt or copy at https://www.boost.org/LICENSE_1_0.txt)
 
@@ -8,7 +8,7 @@ extern crate whoami;
 fn version() {
     let mut t = term::stdout().unwrap();
     t.fg(term::color::BRIGHT_RED).unwrap();
-    write!(t, "jeronaldaron.").unwrap();
+    write!(t, "aldaronlau.").unwrap();
     t.fg(term::color::BRIGHT_BLUE).unwrap();
     t.attr(term::Attr::Bold).unwrap();
     write!(t, env!("CARGO_PKG_NAME")).unwrap();
@@ -22,7 +22,7 @@ fn version() {
     t.reset().unwrap();
     write!(t, " ").unwrap();
     t.fg(term::color::MAGENTA).unwrap();
-    writeln!(t, "Jeron Lau 2017 - 2019.").unwrap();
+    writeln!(t, "Jeron Lau 2017 - 2020.").unwrap();
     t.reset().unwrap();
     t.attr(term::Attr::Bold).unwrap();
     write!(t, "License ").unwrap();
@@ -53,7 +53,7 @@ fn help() {
     t.reset().unwrap();
     writeln!(t, "Print version and exit").unwrap();
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        user            ").unwrap();
+    write!(t, "        realname        ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the user's full name.").unwrap();
     t.fg(term::color::BRIGHT_CYAN).unwrap();
@@ -64,7 +64,7 @@ fn help() {
         .unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        host            ").unwrap();
+    write!(t, "        devicename      ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the host device's (pretty) name.").unwrap();
 
@@ -74,12 +74,12 @@ fn help() {
     writeln!(t, "Print the host device's hostname.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        env             ").unwrap();
+    write!(t, "        desktop_env     ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the desktop environment.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        os              ").unwrap();
+    write!(t, "        distro          ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the operating system name and version.").unwrap();
 
@@ -106,28 +106,28 @@ fn main() {
             match a.as_str() {
                 "help" | "--help" => help(),
                 "version" | "--version" => version(),
-                "user" | "--user" => println!("{}", whoami::user()),
+                "realname" | "--realname" => println!("{}", whoami::realname()),
                 "username" | "--username" => println!("{}", whoami::username()),
                 // TODO: Set Hostname.
                 "hostname" | "--hostname" => println!("{}", whoami::hostname()),
-                "host" | "--host" => println!("{}", whoami::host()),
+                "devicename" | "--devicename" => println!("{}", whoami::devicename()),
                 "print" | "--print" => {
                     print!(
-                        "user:         {}\nusername:     {}\n\
-                         host:         {}\nhostname:     {}\n\
-                         os:           {}\nenv:          {}\n\
+                        "realname:     {}\nusername:     {}\n\
+                         devicename:   {}\nhostname:     {}\n\
+                         distro:       {}\ndesktop_env:  {}\n\
                          platform:     {}\n",
-                        whoami::user(),
+                        whoami::realname(),
                         whoami::username(),
-                        whoami::host(),
+                        whoami::devicename(),
                         whoami::hostname(),
-                        whoami::os(),
-                        whoami::env(),
+                        whoami::distro(),
+                        whoami::desktop_env(),
                         whoami::platform(),
                     );
                 }
-                "env" | "--env" => println!("{}", whoami::env()),
-                "os" | "--os" => println!("{}", whoami::os()),
+                "desktop_env" | "--desktop_env" => println!("{}", whoami::desktop_env()),
+                "distro" | "--distro" => println!("{}", whoami::distro()),
                 "platform" | "--platform" => println!("{}", whoami::platform()),
                 a => {
                     print!("Unknown Argument: {}\n\n", a);

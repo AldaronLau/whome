@@ -1,10 +1,10 @@
-# Copyright © Jeron Lau 2017 - 2019.
+# Copyright © Jeron Lau 2017 - 2020.
 # Dual-licensed under either the MIT License or the Boost Software License, Version 1.0.
 # (See accompanying file LICENSE_1_0.txt or copy at https://www.boost.org/LICENSE_1_0.txt)
 
 [package]
 name = "whome"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Jeron Aldaron Lau <jeronaldaron@gmail.com>"]
 edition = "2018"
 license = "MIT / BSL-1.0"
