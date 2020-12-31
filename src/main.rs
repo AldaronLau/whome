@@ -1,6 +1,12 @@
-// Copyright © Jeron Lau 2017 - 2020.
-// Dual-licensed under either the MIT License or the Boost Software License, Version 1.0.
-// (See accompanying file LICENSE_1_0.txt or copy at https://www.boost.org/LICENSE_1_0.txt)
+// Who Me?
+// Copyright © 2017-2020 Jeron Aldaron Lau.
+//
+// Licensed under any of:
+//  - Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+//  - MIT License (https://mit-license.org/)
+//  - Boost Software License, Version 1.0 (https://www.boost.org/LICENSE_1_0.txt)
+// At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
+// LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
 extern crate term;
 extern crate whoami;
@@ -45,51 +51,50 @@ fn help() {
     writeln!(t, "Print the name of the user who is logged in.").unwrap();
     writeln!(t).unwrap();
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        help            ").unwrap();
+    write!(t, "    help            ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print this help and exit.").unwrap();
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        version         ").unwrap();
+    write!(t, "    version         ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print version and exit").unwrap();
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        realname        ").unwrap();
+    write!(t, "    realname        ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the user's full name.").unwrap();
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        username        ").unwrap();
+    write!(t, "    username        ").unwrap();
     t.reset().unwrap();
-    writeln!(t, "Print the user's username.  This is the same as running
-                        with no arguments.")
+    writeln!(t, "Print the user's username.  Same as without arguments.")
         .unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        devicename      ").unwrap();
+    write!(t, "    devicename      ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the host device's (pretty) name.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        hostname        ").unwrap();
+    write!(t, "    hostname        ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the host device's hostname.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        desktop_env     ").unwrap();
+    write!(t, "    desktop_env     ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the desktop environment.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        distro          ").unwrap();
+    write!(t, "    distro          ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the operating system name and version.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        platform        ").unwrap();
+    write!(t, "    platform        ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print the host platform.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "        print           ").unwrap();
+    write!(t, "    print           ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print everything known by whome.").unwrap();
 
