@@ -65,8 +65,7 @@ fn help() {
     t.fg(term::color::BRIGHT_CYAN).unwrap();
     write!(t, "    username        ").unwrap();
     t.reset().unwrap();
-    writeln!(t, "Print the user's username.  Same as without arguments.")
-        .unwrap();
+    writeln!(t, "Print the user's username.  Same as without arguments.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
     write!(t, "    devicename      ").unwrap();
