@@ -2,7 +2,7 @@
 
 #### [Changelog][3] | [Source][4] | [Getting Started](#Documentation)
 
-[![tests](https://github.com/libcala/whome/workflows/tests/badge.svg)][2]
+[![tests](https://github.com/AldaronLau/whome/workflows/tests/badge.svg)][2]
 [![docs](https://docs.rs/whome/badge.svg)][0]
 [![crates.io](https://img.shields.io/crates/v/whome.svg)][1]
 
