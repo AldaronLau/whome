@@ -28,5 +28,5 @@ keywords = ["user", "username", "whoami", "platform", "detect"]
 categories = ["os::freebsd-apis", "command-line-utilities", "os::linux-apis", "os::macos-apis", "os::windows-apis"]
 
 [dependencies]
-term = "0.6"
+term = "0.7"
 whoami = "1.0"
