@@ -1,5 +1,5 @@
 // Who Me?
-// Copyright © 2017-2020 Jeron Aldaron Lau.
+// Copyright © 2017-2021 Jeron Aldaron Lau.
 //
 // Licensed under any of:
 //  - Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
@@ -7,9 +7,6 @@
 //  - Boost Software License, Version 1.0 (https://www.boost.org/LICENSE_1_0.txt)
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
-
-extern crate term;
-extern crate whoami;
 
 fn version() {
     let mut t = term::stdout().unwrap();
@@ -28,7 +25,7 @@ fn version() {
     t.reset().unwrap();
     write!(t, " ").unwrap();
     t.fg(term::color::MAGENTA).unwrap();
-    writeln!(t, "Jeron Lau 2017 - 2020.").unwrap();
+    writeln!(t, "Jeron Lau 2017 - 2021.").unwrap();
     t.reset().unwrap();
     t.attr(term::Attr::Bold).unwrap();
     write!(t, "License ").unwrap();
@@ -93,6 +90,11 @@ fn help() {
     writeln!(t, "Print the host platform.").unwrap();
 
     t.fg(term::color::BRIGHT_CYAN).unwrap();
+    write!(t, "    arch            ").unwrap();
+    t.reset().unwrap();
+    writeln!(t, "Print the host architecture.").unwrap();
+
+    t.fg(term::color::BRIGHT_CYAN).unwrap();
     write!(t, "    print           ").unwrap();
     t.reset().unwrap();
     writeln!(t, "Print everything known by whome.").unwrap();
@@ -120,7 +122,7 @@ fn main() {
                         "realname:     {}\nusername:     {}\n\
                          devicename:   {}\nhostname:     {}\n\
                          distro:       {}\ndesktop_env:  {}\n\
-                         platform:     {}\n",
+                         platform:     {}\narch:         {}\n",
                         whoami::realname(),
                         whoami::username(),
                         whoami::devicename(),
@@ -128,13 +130,15 @@ fn main() {
                         whoami::distro(),
                         whoami::desktop_env(),
                         whoami::platform(),
+                        whoami::arch(),
                     );
                 }
                 "desktop_env" | "--desktop_env" => println!("{}", whoami::desktop_env()),
                 "distro" | "--distro" => println!("{}", whoami::distro()),
                 "platform" | "--platform" => println!("{}", whoami::platform()),
+                "arch" | "--arch" => println!("{}", whoami::arch()),
                 a => {
-                    print!("Unknown Argument: {}\n\n", a);
+                    print!("Unknown Argument: {a}\n\n");
                     help();
                 }
             }
