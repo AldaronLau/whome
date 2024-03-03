@@ -26,4 +26,4 @@ categories = ["os::freebsd-apis", "command-line-utilities", "os::linux-apis", "o
 
 [dependencies]
 term = "0.7"
-whoami = "1.2"
+whoami = "1.4"
