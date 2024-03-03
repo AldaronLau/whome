@@ -1,5 +1,5 @@
 # Who Me?
-# Copyright © 2017-2021 Jeron Aldaron Lau.
+# Copyright © 2017-2024 Jeron Aldaron Lau.
 #
 # Licensed under any of:
 #  - Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
@@ -10,7 +10,7 @@
 
 [package]
 name = "whome"
-version = "0.5.0"
+version = "0.6.0-pre.0"
 edition = "2021"
 license = "Apache-2.0 OR MIT OR BSL-1.0"
 documentation = "https://docs.rs/whome"
@@ -24,6 +24,9 @@ rust replacement for `whoami` and `hostname` with added features.
 keywords = ["user", "username", "whoami", "platform", "detect"]
 categories = ["os::freebsd-apis", "command-line-utilities", "os::linux-apis", "os::macos-apis", "os::windows-apis"]
 
-[dependencies]
-term = "0.7"
-whoami = "1.2"
+[dependencies.term]
+version = "0.7"
+
+[dependencies.whoami]
+git = "https://github.com/ardaku/whoami"
+branch = "redox-support"

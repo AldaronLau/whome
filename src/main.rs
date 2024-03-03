@@ -1,5 +1,5 @@
 // Who Me?
-// Copyright © 2017-2021 Jeron Aldaron Lau.
+// Copyright © 2017-2024 Jeron Aldaron Lau.
 //
 // Licensed under any of:
 //  - Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
@@ -7,6 +7,8 @@
 //  - Boost Software License, Version 1.0 (https://www.boost.org/LICENSE_1_0.txt)
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
+
+use whoami::Result;
 
 fn version() {
     let mut t = term::stdout().unwrap();
@@ -102,7 +104,7 @@ fn help() {
     writeln!(t).unwrap();
 }
 
-fn main() {
+fn main() -> Result {
     let args = &mut ::std::env::args();
 
     if let Some(a) = args.nth(1) {
@@ -115,7 +117,7 @@ fn main() {
                 "realname" | "--realname" => println!("{}", whoami::realname()),
                 "username" | "--username" => println!("{}", whoami::username()),
                 // TODO: Set Hostname.
-                "hostname" | "--hostname" => println!("{}", whoami::hostname()),
+                "hostname" | "--hostname" => println!("{}", whoami::fallible::hostname()?),
                 "devicename" | "--devicename" => println!("{}", whoami::devicename()),
                 "print" | "--print" => {
                     print!(
@@ -126,7 +128,7 @@ fn main() {
                         whoami::realname(),
                         whoami::username(),
                         whoami::devicename(),
-                        whoami::hostname(),
+                        whoami::fallible::hostname()?,
                         whoami::distro(),
                         whoami::desktop_env(),
                         whoami::platform(),
@@ -146,4 +148,6 @@ fn main() {
     } else {
         println!("{}", whoami::username()); // no args
     }
+
+    Ok(())
 }
