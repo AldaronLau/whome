@@ -266,18 +266,17 @@ dependencies = [
 
 [[package]]
 name = "whoami"
-version = "1.5.0-pre.0"
-source = "git+https://github.com/ardaku/whoami?branch=redox-support#ef35b598d538169be3cbcfba4e0dbb91a9e11808"
+version = "1.5.0"
+source = "git+https://github.com/ardaku/whoami?branch=more-whoami-1.5.0-patches#4768c25dc9fcb0753b65272824d717af369aee82"
 dependencies = [
  "redox_syscall",
  "wasite",
- "wasm-bindgen",
  "web-sys",
 ]
 
 [[package]]
 name = "whome"
-version = "0.5.0"
+version = "0.6.0-pre.1"
 dependencies = [
  "term",
  "whoami",
