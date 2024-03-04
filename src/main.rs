@@ -27,7 +27,7 @@ fn version() {
     t.reset().unwrap();
     write!(t, " ").unwrap();
     t.fg(term::color::MAGENTA).unwrap();
-    writeln!(t, "Jeron Lau 2017 - 2021.").unwrap();
+    writeln!(t, "Jeron Lau 2017 - 2024.").unwrap();
     t.reset().unwrap();
     t.attr(term::Attr::Bold).unwrap();
     write!(t, "License ").unwrap();

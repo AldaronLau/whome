@@ -267,7 +267,8 @@ dependencies = [
 [[package]]
 name = "whoami"
 version = "1.5.0"
-source = "git+https://github.com/ardaku/whoami?branch=more-whoami-1.5.0-patches#4768c25dc9fcb0753b65272824d717af369aee82"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0fec781d48b41f8163426ed18e8fc2864c12937df9ce54c88ede7bd47270893e"
 dependencies = [
  "redox_syscall",
  "wasite",
@@ -276,7 +277,7 @@ dependencies = [
 
 [[package]]
 name = "whome"
-version = "0.6.0-pre.1"
+version = "0.6.0"
 dependencies = [
  "term",
  "whoami",
