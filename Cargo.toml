@@ -11,7 +11,7 @@
 [package]
 name = "whome"
 version = "0.6.1"
-edition = "2021"
+edition = "2024"
 license = "Apache-2.0 OR BSL-1.0 OR MIT"
 documentation = "https://docs.rs/whome"
 homepage = "https://github.com/AldaronLau/whome/blob/v0/CHANGELOG.md"
