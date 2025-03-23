@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://github.com/AldaronLau/semver).
 
-## [0.6.1] - 2024-03-19
+## [0.6.1] - 2025-03-22
 ### Changed
- - Update whoami to version `1.5.2`.
+ - Update whoami to version `1.6`.
 
 ## [0.6.0] - 2024-03-04
 ### Changed
