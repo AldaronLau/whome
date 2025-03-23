@@ -12,7 +12,7 @@
 name = "whome"
 version = "0.6.1"
 edition = "2021"
-license = "Apache-2.0 OR MIT OR BSL-1.0"
+license = "Apache-2.0 OR BSL-1.0 OR MIT"
 documentation = "https://docs.rs/whome"
 homepage = "https://github.com/AldaronLau/whome/blob/v0/CHANGELOG.md"
 repository = "https://github.com/AldaronLau/whome"
@@ -30,10 +30,10 @@ categories = [
   "os::windows-apis",
 ]
 
-[dependencies.term]
-version = "0.7"
-
 [dependencies.whoami]
-version = "1.5.2"
+version = "1.6.0"
 git = "https://github.com/ardaku/whoami"
 branch = "release-1.6.0"
+
+[dependencies.yansi]
+version = "1.0.1"
