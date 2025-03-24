@@ -1,5 +1,5 @@
 // Who Me?
-// Copyright © 2017-2024 Jeron Aldaron Lau.
+// Copyright © 2017-2025 Jeryn Aldaron Lau.
 //
 // Licensed under any of:
 //  - Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
@@ -9,99 +9,79 @@
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
 use whoami::Result;
+use yansi::Paint;
 
 fn version() {
-    let mut t = term::stdout().unwrap();
-    t.fg(term::color::BRIGHT_RED).unwrap();
-    write!(t, "aldaronlau.").unwrap();
-    t.fg(term::color::BRIGHT_BLUE).unwrap();
-    t.attr(term::Attr::Bold).unwrap();
-    write!(t, env!("CARGO_PKG_NAME")).unwrap();
-    t.reset().unwrap();
-    write!(t, " ").unwrap();
-    t.fg(term::color::BRIGHT_GREEN).unwrap();
-    writeln!(t, env!("CARGO_PKG_VERSION")).unwrap();
-    t.reset().unwrap();
-    t.attr(term::Attr::Bold).unwrap();
-    write!(t, "Copyright ©").unwrap();
-    t.reset().unwrap();
-    write!(t, " ").unwrap();
-    t.fg(term::color::MAGENTA).unwrap();
-    writeln!(t, "Jeron Lau 2017 - 2024.").unwrap();
-    t.reset().unwrap();
-    t.attr(term::Attr::Bold).unwrap();
-    write!(t, "License ").unwrap();
-    t.reset().unwrap();
-    t.fg(term::color::MAGENTA).unwrap();
-    writeln!(t, "MIT / BSL-1.0").unwrap();
-    t.reset().unwrap();
+    println!(
+        "{}{} {}",
+        "aldaronlau.".bright_red(),
+        env!("CARGO_PKG_NAME").bright_blue().bold(),
+        env!("CARGO_PKG_VERSION").bright_green(),
+    );
+    println!(
+        "{} {}",
+        "Copyright ©".bold(),
+        "Jeryn Lau 2017 - 2025.".magenta(),
+    );
+    println!(
+        "{} {}",
+        "License".bold(),
+        "Apache-2.0 OR BSL-1.0 OR MIT".magenta(),
+    );
 }
 
 fn help() {
-    let mut t = term::stdout().unwrap();
-    t.attr(term::Attr::Bold).unwrap();
-    write!(t, "Usage ").unwrap();
-    t.reset().unwrap();
-    t.fg(term::color::BRIGHT_GREEN).unwrap();
-    write!(t, "whome ").unwrap();
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    writeln!(t, "[OPTION]").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the name of the user who is logged in.").unwrap();
-    writeln!(t).unwrap();
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    help            ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print this help and exit.").unwrap();
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    version         ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print version and exit").unwrap();
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    realname        ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the user's full name.").unwrap();
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    username        ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the user's username.  Same as without arguments.").unwrap();
-
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    devicename      ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the host device's (pretty) name.").unwrap();
-
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    hostname        ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the host device's hostname.").unwrap();
-
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    desktop_env     ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the desktop environment.").unwrap();
-
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    distro          ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the operating system name and version.").unwrap();
-
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    platform        ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the host platform.").unwrap();
-
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    arch            ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print the host architecture.").unwrap();
-
-    t.fg(term::color::BRIGHT_CYAN).unwrap();
-    write!(t, "    print           ").unwrap();
-    t.reset().unwrap();
-    writeln!(t, "Print everything known by whome.").unwrap();
-
-    writeln!(t).unwrap();
+    println!(
+        "{} {} {}",
+        "Usage".bold(),
+        "whome".bright_green(),
+        "[OPTION]".bright_cyan(),
+    );
+    println!("Print the name of the user who is logged in.\n");
+    println!(
+        "{}Print this help and exit.",
+        "    help            ".bright_cyan(),
+    );
+    println!(
+        "{}Print version and exit.",
+        "    version         ".bright_cyan(),
+    );
+    println!(
+        "{}Print the user's full name.",
+        "    realname        ".bright_cyan(),
+    );
+    println!(
+        "{}Print the user's username.  Same as without arguments.",
+        "    username        ".bright_cyan(),
+    );
+    println!(
+        "{}Print the host device's (pretty) name.",
+        "    devicename      ".bright_cyan(),
+    );
+    println!(
+        "{}Print the host device's hostname.",
+        "    hostname        ".bright_cyan(),
+    );
+    println!(
+        "{}Print the desktop environment.",
+        "    desktop_env     ".bright_cyan(),
+    );
+    println!(
+        "{}Print the operating system name and version.",
+        "    distro          ".bright_cyan(),
+    );
+    println!(
+        "{}Print the host platform.",
+        "    platform        ".bright_cyan(),
+    );
+    println!(
+        "{}Print the host architecture.",
+        "    arch            ".bright_cyan(),
+    );
+    println!(
+        "{}Print everything known by whome.\n",
+        "    print           ".bright_cyan(),
+    );
 }
 
 fn main() -> Result {
@@ -117,8 +97,12 @@ fn main() -> Result {
                 "realname" | "--realname" => println!("{}", whoami::realname()),
                 "username" | "--username" => println!("{}", whoami::username()),
                 // TODO: Set Hostname.
-                "hostname" | "--hostname" => println!("{}", whoami::fallible::hostname()?),
-                "devicename" | "--devicename" => println!("{}", whoami::devicename()),
+                "hostname" | "--hostname" => {
+                    println!("{}", whoami::fallible::hostname()?)
+                }
+                "devicename" | "--devicename" => {
+                    println!("{}", whoami::devicename())
+                }
                 "print" | "--print" => {
                     print!(
                         "realname:     {}\nusername:     {}\n\
@@ -135,7 +119,9 @@ fn main() -> Result {
                         whoami::arch(),
                     );
                 }
-                "desktop_env" | "--desktop_env" => println!("{}", whoami::desktop_env()),
+                "desktop_env" | "--desktop_env" => {
+                    println!("{}", whoami::desktop_env())
+                }
                 "distro" | "--distro" => println!("{}", whoami::distro()),
                 "platform" | "--platform" => println!("{}", whoami::platform()),
                 "arch" | "--arch" => println!("{}", whoami::arch()),

@@ -10,9 +10,9 @@
 
 [package]
 name = "whome"
-version = "0.6.0"
-edition = "2021"
-license = "Apache-2.0 OR MIT OR BSL-1.0"
+version = "0.6.1"
+edition = "2024"
+license = "Apache-2.0 OR BSL-1.0 OR MIT"
 documentation = "https://docs.rs/whome"
 homepage = "https://github.com/AldaronLau/whome/blob/v0/CHANGELOG.md"
 repository = "https://github.com/AldaronLau/whome"
@@ -22,12 +22,18 @@ A command line program for detecting the current user's name and environment. A
 rust replacement for `whoami` and `hostname` with added features.
 """
 keywords = ["user", "username", "whoami", "platform", "detect"]
-categories = ["os::freebsd-apis", "command-line-utilities", "os::linux-apis", "os::macos-apis", "os::windows-apis"]
-
-[dependencies.term]
-version = "0.7"
+categories = [
+  "os::freebsd-apis",
+  "command-line-utilities",
+  "os::linux-apis",
+  "os::macos-apis",
+  "os::windows-apis",
+]
 
 [dependencies.whoami]
-version = "1.5.0"
-#git = "https://github.com/ardaku/whoami"
-#branch = "more-whoami-1.5.0-patches"
+version = "1.6.0"
+# git = "https://github.com/ardaku/whoami"
+# branch = "release-1.6.0"
+
+[dependencies.yansi]
+version = "1.0.1"
