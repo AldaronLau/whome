@@ -31,9 +31,9 @@ categories = [
 ]
 
 [dependencies.whoami]
-version = "1.6.0"
+version = "1.6.1"
 # git = "https://github.com/ardaku/whoami"
-# branch = "release-1.6.0"
+# branch = "release-1.6.1"
 
 [dependencies.yansi]
 version = "1.0.1"
