@@ -8,8 +8,10 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-use whoami::Result;
+use whoami::{DesktopEnvironment, Result};
 use yansi::Paint;
+
+const UNKNOWN: &str = "<unknown>";
 
 fn version() {
     println!(
@@ -94,14 +96,14 @@ fn main() -> Result {
             match a.as_str() {
                 "help" | "--help" => help(),
                 "version" | "--version" => version(),
-                "realname" | "--realname" => println!("{}", whoami::realname()),
-                "username" | "--username" => println!("{}", whoami::username()),
+                "realname" | "--realname" => println!("{}", whoami::realname()?),
+                "username" | "--username" => println!("{}", whoami::username()?),
                 // TODO: Set Hostname.
                 "hostname" | "--hostname" => {
-                    println!("{}", whoami::fallible::hostname()?)
+                    println!("{}", whoami::hostname()?)
                 }
                 "devicename" | "--devicename" => {
-                    println!("{}", whoami::devicename())
+                    println!("{}", whoami::devicename()?)
                 }
                 "print" | "--print" => {
                     print!(
@@ -109,22 +111,22 @@ fn main() -> Result {
                          devicename:   {}\nhostname:     {}\n\
                          distro:       {}\ndesktop_env:  {}\n\
                          platform:     {}\narch:         {}\n",
-                        whoami::realname(),
-                        whoami::username(),
-                        whoami::devicename(),
-                        whoami::fallible::hostname()?,
-                        whoami::distro(),
-                        whoami::desktop_env(),
+                        whoami::realname().unwrap_or_else(|_| UNKNOWN.to_string()),
+                        whoami::username().unwrap_or_else(|_| UNKNOWN.to_string()),
+                        whoami::devicename().unwrap_or_else(|_| UNKNOWN.to_string()),
+                        whoami::hostname().unwrap_or_else(|_| UNKNOWN.to_string()),
+                        whoami::distro().unwrap_or_else(|_| UNKNOWN.to_string()),
+                        whoami::desktop_env().unwrap_or_else(|| DesktopEnvironment::Unknown("None".to_string())),
                         whoami::platform(),
-                        whoami::arch(),
+                        whoami::cpu_arch(),
                     );
                 }
                 "desktop_env" | "--desktop_env" => {
-                    println!("{}", whoami::desktop_env())
+                    println!("{}", whoami::desktop_env().unwrap_or_else(|| DesktopEnvironment::Unknown("None".to_string())))
                 }
-                "distro" | "--distro" => println!("{}", whoami::distro()),
+                "distro" | "--distro" => println!("{}", whoami::distro()?),
                 "platform" | "--platform" => println!("{}", whoami::platform()),
-                "arch" | "--arch" => println!("{}", whoami::arch()),
+                "arch" | "--arch" => println!("{}", whoami::cpu_arch()),
                 a => {
                     print!("Unknown Argument: {a}\n\n");
                     help();
@@ -132,7 +134,7 @@ fn main() -> Result {
             }
         }
     } else {
-        println!("{}", whoami::username()); // no args
+        println!("{}", whoami::username()?); // no args
     }
 
     Ok(())
